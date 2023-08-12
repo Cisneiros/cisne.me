@@ -1,0 +1,122 @@
+@property --background-angle {
+    syntax: '<angle>';
+    initial-value: 180deg;
+    inherits: false;
+}
+
+@keyframes rotate-background {
+    0% {
+        --background-angle: 33deg
+    }
+
+    100% {
+        --background-angle: 393deg
+    }
+}
+
+:root {
+    --color-1: rgba(255, 0, 114, 1);
+    --color-2: rgba(255, 113, 0, 1);
+    --font-display: 'Bevan', sans-serif;
+    --font-color: #ffffff;
+    --font-shadow-color: rgba(0, 0, 0, 0.75);
+    --background-angle: 33deg;
+}
+
+html {
+    font-size: 32px;
+    height: 100%;
+}
+
+@media (max-width: 575.98px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+body {
+    min-height: 100%;
+    animation: 12s rotate-background infinite;
+    background: linear-gradient(var(--background-angle), var(--color-1) 0%, var(--color-2) 100%) no-repeat center center fixed;
+    background-size: cover;
+
+    font-family: 'DM Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    color: var(--font-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 0.5rem;
+}
+
+main {
+    margin: auto 0;
+    max-width: 25rem;
+}
+
+main p {
+    margin: 1.25em 0;
+}
+
+main ul {
+    margin-top: -1.25em;
+}
+
+main ul li {
+    list-style-type: '» ';
+}
+
+h1 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    text-shadow: 0.2rem 0.2rem 0 var(--font-shadow-color);
+    line-height: 1.1;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--color-1);
+    background-color: var(--font-color);
+    box-shadow: 0.2rem 0.2rem 0 0 var(--font-shadow-color);
+}
+
+footer {
+    width: 100%;
+    font-size: 0.75rem;
+    justify-self: flex-end;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 575.98px) {
+    footer {
+        flex-direction: column;
+    }
+}
+
+footer .text {
+    margin: 0 auto;
+}
+
+footer .language-selector {
+    justify-self: flex-end;
+}
+
+img.icon {
+    height: 0.75em;
+    border-radius: 0.15em;
+    display: inline-block;
+    vertical-align: baseline;
+}
